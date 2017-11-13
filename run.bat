@@ -6,4 +6,4 @@ SET DATADIR=%~dp0data/
 SET NETWORKID=89230491236498
 
 %~dp0bin/geth.exe --datadir "%DATADIR%" init "genesis.json"
-%~dp0bin/geth.exe --datadir "%DATADIR%" --networkid "%NETWORKID%" --bootnodes "enode://0585547e6c553e54dc9740dbc5b5827c87d3e5e3f640de32ae2f56902b4dc5a663210b6e4971bfdabb781a857440d6afa7ca9339d8bdced61ae425a5d58f5bd7@88.159.207.186:30303" --rpc --rpccorsdomain "http://localhost:8000" console
+%~dp0bin/geth.exe --datadir "%DATADIR%" --networkid "%NETWORKID%" --bootnodes "enode://e76d45675a61439e9a1649f56631bc0f2689bb7e95aecbf40e700d53f311ef75ac559cbcdfb9f00cb5652395c2478ea01239d233fc38a63d152ef8ed546778d3@88.159.207.186:30303" --rpc --rpccorsdomain "http://localhost:8000" --ws --wsport 8546 --wsorigins "*" --wsapi "eth,web3"  console
