@@ -2,7 +2,7 @@
 REM I don't care for proper logic in this script because batch sucks.
 
 SET DATADIR=%~dp0data/
-SET NETWORKID=89230491236498
+SET NETWORKID=9869
 
 %~dp0bin/geth.exe --datadir "%DATADIR%" init "genesis.json"
 %~dp0bin/geth.exe --datadir "%DATADIR%" --networkid "%NETWORKID%" ^

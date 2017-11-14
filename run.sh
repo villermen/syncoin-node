@@ -5,7 +5,7 @@ cd "$(dirname $0)"
 
 # Network parameters
 DATADIR="data/"
-NETWORKID=89230491236498
+NETWORKID=9869
 
 # Initialize data with genesis block
 if [ ! -d "$DATADIR" ]; then
