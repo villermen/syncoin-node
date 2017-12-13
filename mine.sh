@@ -8,7 +8,7 @@ DATADIR=data/
 NETWORKID=9869
 
 # Decide binary based on architecture
-if [ $(arch) != "armv71" ]
+if [ $(arch) != "armv7l" ]
 then
     BINARY=geth-linux-amd64
 else
