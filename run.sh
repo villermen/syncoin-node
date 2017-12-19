@@ -7,16 +7,36 @@ cd "$(dirname $0)"
 DATADIR=data/
 NETWORKID=9869
 
+# Parse arguments
+MINE_ARGUMENT=""
+while [ "$1" != "" ]; do
+    case $1 in
+      "--mine")
+        MINE_ARGUMENT="--mine"
+        ;;
+    esac
+    shift
+done
+
 # Decide binary based on architecture
-if [ $(arch) != "armv7l" ]
-then
-    BINARY=geth-linux-amd64
+ARCHITECTURE="$(arch)"
+if [[ $ARCHITECTURE == *"aarch64"* ]]; then
+    BINARY=geth-arm64
+elif [[ $ARCHITECTURE == *"x86_64"* ]]; then
+    BINARY=geth-win64
 else
-    BINARY=geth-linux-arm7
+    BINARY=geth-amd64
 fi
 
 # Initialize data with genesis block
-bin/$BINARY --datadir "$DATADIR" init "genesis.json"
+if [ ! -d "$DATADIR" ]; then
+    bin/$BINARY --datadir "$DATADIR" init "genesis.json"
+
+    if [ $? != 0 ]; then
+        echo "Failed to initialize data directory!"
+        exit 1
+    fi
+fi
 
 # Run node
 bin/$BINARY --datadir "$DATADIR" --networkid "$NETWORKID" \
@@ -25,4 +45,5 @@ bin/$BINARY --datadir "$DATADIR" --networkid "$NETWORKID" \
 --ws --wsport 8546 --wsorigins "*" --wsapi "eth,web3,net" \
 --txpool.pricelimit 0 --gasprice 0 \
 --minerthreads 1 --etherbase "0x66974E872deaf3B9eF4a2EAa3689c8Fd00bC70FE" \
+$MINE_ARGUMENT \
 console
