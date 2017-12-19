@@ -8,11 +8,11 @@ DATADIR=data/
 NETWORKID=9869
 
 # Parse arguments
-MINE_ARGUMENT=""
+GETH_ARGS="console"
 while [ "$1" != "" ]; do
     case $1 in
       "--mine")
-        MINE_ARGUMENT="--mine"
+        GETH_ARGS="--mine"
         ;;
     esac
     shift
@@ -45,5 +45,4 @@ bin/$BINARY --datadir "$DATADIR" --networkid "$NETWORKID" \
 --ws --wsport 8546 --wsorigins "*" --wsapi "eth,web3,net" \
 --txpool.pricelimit 0 --gasprice 0 \
 --minerthreads 1 --etherbase "0x66974E872deaf3B9eF4a2EAa3689c8Fd00bC70FE" \
-$MINE_ARGUMENT \
-console
+$GETH_ARGS
