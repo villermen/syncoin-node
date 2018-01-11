@@ -14,6 +14,9 @@ while [ "$1" != "" ]; do
       "--mine")
         GETH_ARGS="--mine"
         ;;
+	  "--daemon")
+	    GETH_ARGS=""
+		;;
     esac
     shift
 done
