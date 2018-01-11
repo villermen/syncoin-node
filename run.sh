@@ -19,10 +19,11 @@ while [ "$1" != "" ]; do
 done
 
 # Decide binary based on architecture
-ARCHITECTURE="$(arch)"
-if [[ $ARCHITECTURE == *"aarch64"* ]]; then
+UNAME="$(uname -a)"
+UNAME=${UNAME,,}
+if [[ $UNAME == *"aarch64"* ]]; then
     BINARY=geth-arm64
-elif [[ $ARCHITECTURE == *"x86_64"* ]]; then
+elif [[ $UNAME == *"msys"* ]]; then
     BINARY=geth-win64
 else
     BINARY=geth-amd64
