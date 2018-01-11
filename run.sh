@@ -44,7 +44,7 @@ fi
 
 # Run node
 bin/$BINARY --datadir "$DATADIR" --networkid "$NETWORKID" \
---bootnodes "enode://e76d45675a61439e9a1649f56631bc0f2689bb7e95aecbf40e700d53f311ef75ac559cbcdfb9f00cb5652395c2478ea01239d233fc38a63d152ef8ed546778d3@88.159.207.186:30303" \
+--bootnodes "enode://e76d45675a61439e9a1649f56631bc0f2689bb7e95aecbf40e700d53f311ef75ac559cbcdfb9f00cb5652395c2478ea01239d233fc38a63d152ef8ed546778d3@88.159.207.186:30303,enode://09b6a770e642a987696a8cbc2764d54122f6f4ce660fd74e22836854782e6f878b5691b391ea42f1008cc017287a6abf7bf135e282b5d8198894e01ddd437802@141.138.196.235:30303" \
 --rpc --rpccorsdomain "http://localhost:8000" \
 --ws --wsport 8546 --wsorigins "*" --wsapi "eth,web3,net" \
 --gasprice 0 --minerthreads 1 --etherbase "0x66974E872deaf3B9eF4a2EAa3689c8Fd00bC70FE" \
