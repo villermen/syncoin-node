@@ -5,7 +5,7 @@ cd "$(dirname $0)"
 
 # Network parameters
 DATADIR=data/
-NETWORKID=98691
+NETWORKID=986912
 
 # Parse arguments
 GETH_ARGS="console"
