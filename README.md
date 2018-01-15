@@ -14,8 +14,4 @@ The node will detect and run on the following platforms:
 
 ## Mining on a Raspberry Pi
 
-The releases section contains a customized image of Amarni's [pi64](https://github.com/bamarni/pi64) operating system.
-You can install it on a Raspberry Pi 3 using [Win32DiskImager](https://sourceforge.net/projects/win32diskimager/), [Rufus](https://rufus.akeo.ie/) or a similar tool.
-
-The image runs a `syncoind` service at startup that will pull in the latest changes from this repository and then starts mining.
-Alternatively, the service can be interacted with using systemd commands like `sudo systemctl stop syncoind`, `sudo systemctl start syncoind` and `sudo journalctl --follow --unit syncoind`.
+See the instructions within the [pi64](pi64) directory of this repository to set up mining with a RPi.
