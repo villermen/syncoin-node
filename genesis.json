@@ -1,12 +1,17 @@
 {
     "config": {
-        "chainId": 9869,
+        "chainId": 98691,
         "homesteadBlock": 0,
         "eip155Block": 0,
         "eip158Block": 0
     },
-    "difficulty": "1000000",
-    "gasLimit": "1000000",
-    "coinbase": "0x0000000000000000000000000000000000000000",
-    "alloc": {}
+    "difficulty": "1",
+    "gasLimit": "100000000",
+    "coinbase": "0x66974E872deaf3B9eF4a2EAa3689c8Fd00bC70FE",
+    "alloc": {
+		"0x66974E872deaf3B9eF4a2EAa3689c8Fd00bC70FE": {"balance": "1000000000000000000000000000"},
+		"0x51105F01a99F0a785921b6377dB041FA2b562c75": {"balance": "1000000000000000000000000000"},
+		"0x729dec865E1af5A884300d08B9BE2E3e1F011C13": {"balance": "1000000000000000000000000000"},
+		"0xC319f1908901f04963330bC1e47180a786555F0b": {"balance": "1000000000000000000000000000"}
+	}
 }
